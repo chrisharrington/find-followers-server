@@ -1,0 +1,30 @@
+{
+  "name": "find-followers-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.12.4",
+    "lodash": "^3.9.3",
+    "oauth": "^0.9.13",
+    "require-dir": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "scripts": {
+    "test": "mocha -r globals $(find test -name '*.test.js')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisharrington/find-followers-server.git"
+  },
+  "author": "Chris Harrington",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisharrington/find-followers-server/issues"
+  },
+  "homepage": "https://github.com/chrisharrington/find-followers-server"
+}
