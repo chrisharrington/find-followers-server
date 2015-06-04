@@ -1,5 +1,7 @@
 {
 	"server": {
 		"port": 8089
-	}
+	},
+	
+	"mongo": "mongodb://localhost/find-followers"
 }

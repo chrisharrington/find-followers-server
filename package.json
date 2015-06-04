@@ -4,16 +4,14 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "bluebird": "^2.9.27",
     "express": "^4.12.4",
     "lodash": "^3.9.3",
+    "mongoose": "^4.0.4",
     "oauth": "^0.9.13",
     "require-dir": "^0.3.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
   "scripts": {
     "test": "mocha -r globals $(find test -name '*.test.js')"
   },
