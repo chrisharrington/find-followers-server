@@ -10,6 +10,7 @@ var _ = require("lodash"),
 var express = require("express"),
 	app = express();
 
+app.use(require("cors"));
 controllers(app);
 
 data.initialize();
