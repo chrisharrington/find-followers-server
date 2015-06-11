@@ -3,5 +3,7 @@
 		"port": 8089
 	},
 	
-	"mongo": "mongodb://localhost/find-followers"
+	"mongo": "mongodb://localhost/find-followers",
+    
+    "favouriteCount": 30
 }
