@@ -33,9 +33,9 @@ var twitter = new Twitter({
 	callback: "http://findfollowers.me/#/oauth_callback"
 });
 
-var token = "mJk9xwAAAAAAgAb5AAABTePEyBU",
-	secret = "pDnWYAED6iRSj5RoXdzO7tzz9v2zzEQl",
-	verifier = "JnsRbRtuvOmTLuzRwW3OOrZC14MhIcnI";
+var token = "c8q0FAAAAAAAgAb5AAABTeQnXH4",
+	secret = "yLWlYAF78zVfBBzTdwUo4B33QEgcb63H",
+	verifier = "FqCpU00kVkwtDanKUJ4FLlqgX8E0RvaN";
 
 twitter.getAccessToken(token, secret, verifier, function(err, accessToken, accessTokenSecret) {
 	if (err)
