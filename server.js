@@ -11,6 +11,7 @@ var express = require("express"),
 	app = express();
 
 app.use(require("cors")());
+app.use(include("middleware/user"));
 controllers(app);
 
 data.initialize();
