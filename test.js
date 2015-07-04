@@ -11,9 +11,11 @@ var User = include("data/models").User,
 include("data").initialize().then(function() {
     User.findOne({}, function(err, user) {
         favourites.go(user).then(function(tweets) {
-            process.exit();
+            console.log(tweets);
         }).catch(function(err) {
             console.log(err);
+        }).finally(function() {
+            process.exit();
         });
     });
 });
