@@ -1,22 +1,22 @@
 "use strict";
 
-require("./lib/globals");
-
 var _ = require("lodash"),
+	express = require("express"),
+
 	controllers = include("controllers"),
-	config = include("config"),
-	data = include("data");
+	config = include("config");
 
-var express = require("express"),
-	app = express();
+module.exports = {
+	go: function() {
+		var app = express();
 
-app.use(require("cors")());
-app.use(include("middleware/user"));
-controllers(app);
+		app.use(require("cors")());
+		app.use(include("middleware/user"));
+		controllers(app);
 
-data.initialize();
-
-var server = app.listen(config.server.port, function () {
-	var port = server.address().port;
-	console.log("Listening on " + port + "...");
-});
+		var server = app.listen(config.server.port, function () {
+			var port = server.address().port;
+			console.log("Listening on " + port + "...");
+		});
+	}
+};

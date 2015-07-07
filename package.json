@@ -10,6 +10,7 @@
     "lodash": "^3.9.3",
     "moment": "^2.10.3",
     "mongoose": "^4.0.4",
+    "node-schedule": "^0.2.9",
     "node-twitter-api": "^1.6.0",
     "oauth": "^0.9.13",
     "require-dir": "^0.3.0"
