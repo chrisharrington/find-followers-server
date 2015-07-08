@@ -6,5 +6,5 @@ var data = include("data");
 
 data.initialize().then(function() {
     require("./server").go();
-    //require("./scheduler").go();
+    require("./scheduler").go();
 });
