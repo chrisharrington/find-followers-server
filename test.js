@@ -2,10 +2,16 @@
 
 require("./lib/globals");
 
-var scheduler = require("node-schedule");
+var User = include("data/models").User;
 
-var job = scheduler.scheduleJob("0 0/1 * 1/1 * ? *", function() {
-    console.log(new Date());
+include("data").initialize().then(function() {
+    User.findOne({}, function(err, user) {
+        include("tasks/twitter-favourites").go(user).then(function() {
+            console.log("Done.");
+        }).catch(function(e) {
+            console.log(e.stack || e);
+        }).finally(function() {
+            process.exit();
+        });
+    });
 });
-
-console.log(job);
