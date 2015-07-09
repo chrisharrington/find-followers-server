@@ -1,5 +1,7 @@
 "use strict";
 
+require("./lib/globals");
+
 var _ = require("lodash"),
 	express = require("express"),
 
