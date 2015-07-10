@@ -39,12 +39,18 @@ function _removeFavourites(user) {
 }
 
 function _insertFavourites(user) {
-    var first = moment().add(DAYS*-1, "days"),
+    var now = moment(),
+        first = now.clone().add(DAYS*-1, "days"),
         promises = [];
 
-    for (var date = first; date < moment(); date = date.add(1, "day"))
+    for (var date = first; date < moment(); date = date.add(1, "day")) {
+        if (date.isSame(now.clone().add(-60, "days"), "day"))
+            user.terms.push("#blah");
+        if (date.isSame(now.clone().add(-30, "days"), "day"))
+            user.terms.push("#boo");
         for (var i = 0; i < config.favouriteCount*8; i++)
             promises.push(_insertFavourite(user, date, _randomTerm(user)));
+        }
 
     return Promise.all(promises);
 }
