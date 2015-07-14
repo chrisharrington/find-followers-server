@@ -5,6 +5,7 @@
 
 	"mongo": "mongodb://localhost/find-followers",
 
-    "favouriteCount": 15,
-	"cron": "0 0,3,6,9,12,15,18,21 * * *"
+	"tweetSearchCount": 250,
+    "favouriteCount": 20,
+	"cron": "0 12,14,16,18,20,22,0 * * *"
 }
