@@ -7,5 +7,6 @@
 
 	"tweetSearchCount": 250,
     "favouriteCount": 20,
+	"recentFollowersCount": 50,
 	"cron": "0 12,14,16,18,20,22,0 * * *"
 }
