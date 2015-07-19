@@ -8,6 +8,7 @@ var scheduler = require("node-schedule"),
     moment = require("moment"),
 
     User = include("data/models").User,
+    Log = include("data/models").Log,
     Favourite = include("data/models").Favourite,
 
     config = include("config"),
@@ -16,13 +17,15 @@ var scheduler = require("node-schedule"),
     Twitter = include("apis/twitter");
 
 include("data").initialize().then(function() {
-    User.findOne({}, function(err, user) {
-        include("tasks/twitter-favourites").go(user).then(function(result) {
-            console.log("Done.");
-        }).catch(function(e) {
-            console.log(e);
-        }).finally(function() {
-            process.exit();
+    Log.remove({}, function(err) {
+        User.findOne({}, function(err, user) {
+            include("tasks/twitter-favourites").go(user).then(function(result) {
+                console.log("Done.");
+            }).catch(function(e) {
+                console.log(e.stack || e);
+            }).finally(function() {
+                process.exit();
+            });
         });
     });
 });
